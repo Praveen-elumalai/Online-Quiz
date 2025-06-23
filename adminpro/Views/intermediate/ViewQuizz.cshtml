@@ -1,0 +1,59 @@
+﻿@{
+    Layout = "~/Views/intermediate/webview.cshtml";
+    var grid = new WebGrid(Model, canSort: false, rowsPerPage: 10);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ViewQuizz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .center-grid-container {
+            display: block;
+            margin-top: 20PX;
+            margin-left: auto;
+            margin-right: auto;
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    @using (Html.BeginForm("ViewQuizz", "intermediate", FormMethod.Post))
+    {
+        <div class="row mt-2">
+            <div class="col-4">
+            </div>
+            <div class="col-4">
+                <div>
+                    <h1>@Html.Label("Welcome Quizz")</h1>
+                </div>
+                <div class="col-4"></div>
+            </div>
+        </div>
+        <br />
+         
+        <div class="center-grid-container">
+
+            @grid.GetHtml(
+     tableStyle: "table table-striped table-bordered",
+     headerStyle: "thead-dark",
+     columns: new[]{
+        grid.Column("QuizName", "Name"),
+         grid.Column("Duration","Duration"),
+         grid.Column("Questions_Count","Questions_Count"),
+           grid.Column("Action", "Action", style: "text-center", format: @<text>
+            <a href="@Url.Action("AddQuestions", new { quizId = item.QuizId })" class="btn btn-warning btn-sm">Add Questions</a>
+            <a href="@Url.Action("ViewQuestions", new { quizId = item.QuizId })" class="btn btn-info btn-sm">View Questions</a>
+        </text>)
+            
+            
+     })
+        </div> 
+    }
+</body>
+</html>
+ 

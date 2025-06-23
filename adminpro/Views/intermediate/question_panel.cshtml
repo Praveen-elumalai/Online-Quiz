@@ -1,0 +1,206 @@
+﻿@{
+    Layout = "~/Views/intermediate/webview.cshtml"; 
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>question_panel</title>
+</head>
+  
+<body>
+
+        @using (Html.BeginForm ("add", "intermediate", FormMethod.Post))
+        {
+    <div class="container">
+
+          
+        <div class="row">
+            <div class="col-4">
+                 @Html.Label("Subjects:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+
+             @Html.DropDownList("subject",@ViewBag.data  as  SelectList, new { @class = "form-select" })
+
+                
+           
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+          <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Questions:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="questionS" id="questions" class="form-control" placeholder="Enter your question here!"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Options:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="option1" id="option1" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Option_text:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="opttext" id="opttext" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Iscorrect:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <select class="form-control" name="iscorrect" id="iscorrect">
+                  <option value="True/False">True/False</option>
+                   <option value="True">True</option>
+                   <option value="False">False</option>
+
+              </select>
+            </div>
+            <div class="col-4"></div>
+        </div>
+          
+
+         <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Options:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="option2" id="option2" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Option_text:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="opttext1" id="opttext1" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Iscorrect:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <select class="form-control" name="iscorrect1" id="iscorrect1">
+                  <option value="True/False">True/False</option>
+                   <option value="True">True</option>
+                   <option value="False">False</option>
+
+              </select>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+
+         <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Options:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="option3" id="option3" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Option_text:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="opttext2" id="opttext2" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Iscorrect:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <select class="form-control" name="iscorrect2" id="iscorrect2">
+                  <option value="True/False">True/False</option>
+                   <option value="True">True</option>
+                   <option value="False">False</option>
+
+              </select>
+            </div>
+            <div class="col-4"></div>
+        </div>
+
+
+         <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Options:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="option4" id="option4" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Option_text:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <input  type="text" name="opttext3" id="opttext3" class="form-control"/>
+            </div>
+            <div class="col-4"></div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-4">
+                 @Html.Label("Iscorrect:", new {@class ="float-end" })
+            
+            </div>
+            <div class="col-4">
+              <select class="form-control" name="iscorrect3" id="iscorrect3">
+                  <option value="True/False">True/False</option>
+                   <option value="True">True</option>
+                   <option value="False">False</option>
+
+              </select>
+            </div>
+            <div class="col-4"></div>
+        </div>
+         <div class="row mt-2">
+             <div class="col-4"></div>
+             <div class="col-4">
+                 <button type="submit" class="btn btn-danger">Save</button>
+             </div>
+             <div class="col-4"></div>
+
+             </div>
+
+
+    </div>
+        }
+</body>
+</html>

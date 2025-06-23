@@ -1,0 +1,152 @@
+﻿ <!DOCTYPE html>
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>webview</title>
+      <link rel="stylesheet" href="styles.css">
+
+<style>
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+       body {
+            background-color: #f0f4f8;
+            color: #333;
+               display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+      .header {
+            padding: 20px;
+            text-align: center;
+            background-color: #2980b9;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /*position: relative;*/
+        }
+
+       .header h1 {
+            font-size: 36px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+             text-transform: uppercase;
+        }
+        
+       
+        /*.logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #E74C3C;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+      
+
+        .logout-btn:hover {
+            background-color: #C0392B;
+        }*/
+
+
+       .sidebar {
+            width: 150px;
+            height: 100vh;
+            background-color: #2C3E50   ;
+            color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 90px;
+            box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s ease-in-out;
+              z-index: 1000;
+        }
+
+       .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar ul li {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+          .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+            padding: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s, padding-left 0.3s;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+         .sidebar ul li a:hover {
+            background-color: #1ABC9C;
+            padding-left: 20px;
+        }
+
+        .sidebar ul li a:active {
+            background-color: #16A085;
+        }
+          .container {
+            margin-left: 240px;
+            padding: 20px;
+            flex: 1;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+             margin-top: 20px;
+            transition: margin-left 0.3s ease;
+        }
+
+    
+       
+
+
+       
+
+
+</style>
+
+</head>
+<body>
+   <div class="header">  
+        <h1>ONLINE QUIZ</h1>
+    </div>
+    <div class="sidebar">
+      
+        <ul>
+            <li>@Html.ActionLink("HOME","welcomeview","intermediate")</li>
+            <li><a href="~/intermediate/subjectpanel">Subjects</a></li>
+            <li>@Html.ActionLink("Questions","question_panel","intermediate")</li>
+           <li> <a href="~/intermediate/View_question">View Questions</a></li>
+            <li><a href="~/intermediate/Quizz">Create Quizz</a></li>
+            <li><a href="~/intermediate/ViewQuizz">View Quizz</a> </li>
+            <li>@Html.ActionLink("Logout", "Logout", "intermediate")</li>
+        </ul>
+    </div>
+
+   <div class="container">@RenderBody()</div>
+     
+
+
+</body>
+</html>
